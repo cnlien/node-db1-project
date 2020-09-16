@@ -93,7 +93,16 @@ The following exercises **require research**, the concepts needed to complete th
 - Run more queries.
 
   - Find a query to discover how many different cities are stored in the Customers table. Repeats should not be double counted. Should be 69.
+  ```sql
+  SELECT COUNT ( DISTINCT City ) AS "Number of Cities"
+  FROM [customers]
+  ```
   - Find all suppliers who have names longer than 20 characters. Returns 11 records.
+  ```sql
+  SELECT SupplierName
+  FROM [Suppliers]
+  WHERE LENGTH(SupplierName) > 20
+  ```
   - Add a `query string` option to the `GET /api/accounts` endpoint. The `query string` may contain `limit`, `sortby` and `sortdir` keys. If these keys are provided, use these values to limit and sort the `accounts` which are selected from the database. Reference the docs for sorting and limiting in [knexjs.org](http://knexjs.org/).
 
   ```js
